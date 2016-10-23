@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>signup page</title>
+</head>
+<body background="D:\S-Letter-HD-wallpaper.jpg" width="3000px" height="1000px">
+<form action="http://www.SnapHost.com/captcha/send.aspx" id="ContactUsCaptchaWebForm" method="post" onsubmit="return ValidateForm(this);">
+<input id="skip_WhereToSend" name="skip_WhereToSend" type="hidden" value="your@email.com" />
+<input id="skip_SnapHostID" name="skip_SnapHostID" type="hidden" value="H9CX4CA3C5ZC" />
+<input id="skip_WhereToReturn" name="skip_WhereToReturn" type="hidden" value="http://www.YourWebsiteAddress.com/ThankYouPage.htm" />
+<input id="skip_Subject" name="skip_Subject" type="hidden" value="Contact Us Form" />
+<input id="skip_ShowUsersIp" name="skip_ShowUsersIp" type="hidden" value="1" />
+<input id="skip_SendCopyToUser" name="skip_SendCopyToUser" type="hidden" value="1" />
+<script type="text/javascript">
+function ValidateForm(frm) {
+if (frm.FirstName.value == "") {alert('First name is required.');frm.FirstName.focus();return false;}
+if (frm.LastName.value == "") {alert('Last name is required.');frm.LastName.focus();return false;}
+if (frm.FromEmailAddress.value == "") {alert('Email address is required.');frm.FromEmailAddress.focus();return false;}
+if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) {alert('Please enter a valid email address.');frm.FromEmailAddress.focus();return false;}
+return true; }
+</script>
+<script>
+function myFunction() {
+    var x1, x2, p1,p2, text;
+    var chkUsrName = /^[a-z][0-9a-z]+$/i;
+	var chkUsrEmail = /^[a-z][0-9a-z]+@[a-z]+\.[a-z]+$/i;
+	var chkPaswrd = /^[a-zA-Z0-9@$\_]+$/;
+    x1 = document.getElementById("usrname").value;
+    x2 = document.getElementById("usremail").value;
+	p1 = document.getElementById("password1").value;
+    p2 = document.getElementById("password2").value;
+    if (x1.match(chkUsrName)) {	
+        text = "Valid User Name";
+		if (x2.match(chkUsrEmail)) {
+			text = "Valid User Email";
+			if (p1.match(p2)){
+			text = "password matches";
+				if (p1.match(chkPaswrd)){
+				text = "Registration OK";
+				} else{
+				text = "Invalid password";
+				}
+			} else {
+				text = "Passwords not matching";
+			}
+		} else {
+			text = "Invalid User Email ";
+		}
+	} else {
+		text = "Invalid User Name";
+	}
+	if (text.match("Registration OK")){
+		document.getElementById("OK").innerHTML = text;	
+		document.getElementById("NotOK").innerHTML = "";		
+	}
+	else
+	{
+		document.getElementById("NotOK").innerHTML = text;
+		document.getElementById("OK").innerHTML = "";			
+	}
+    
+	
+}
+</script>
+
+
+</script>
+<label  style="color:white">
+<table border="0" cellpadding="5" cellspacing="0" width="520">
+<tr><td style="width :50%">First name*:<br />
+<input id="FirstName" name="FirstName" type="text" maxlength="60" style="width:240px; border:1px solid #009900" /></td>
+<td style="width:50%">Last name*:<br />
+<input id="LastName" name="LastName" type="text" maxlength="60" style="width:240px; border:1px solid #009900" /></td>
+</tr><tr>
+<td>Email address*:<br />
+<input id="FromEmailAddress" name="FromEmailAddress" type="email" maxlength="60" style="width:240px; border:1px solid #009900" /></td>
+<td>&nbsp;</td>
+</tr><tr>
+
+<td>Mobile phone number:<br />
+<input id="MobilePhoneNumber" name="MobilePhoneNumber" type="text" maxlength="60" style="width:240px; border:1px solid #009900" /></td>
+</tr><tr>
+<td>password:<br/>
+<input type="password" maxlength="60"style="width:240px; border:1px solid #009900" /></td>
+<td>Confirm password:<br/>
+<input type="password" maxlength="60"style="width:240px; border:1px solid #009900" /></td>
+<td colspan="2" align="center"> <br />
+
+ <br />
+* - required fields. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<input id="skip_Submit" name="skip_Submit" type="submit" value="Submit" />
+</td></tr>
+</table><br /></label>
+</form>
+</body>
+</html>
